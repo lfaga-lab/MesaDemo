@@ -128,10 +128,25 @@
   }
 
   function setView(view){ state.view=view; render(); $("#sidebar").classList.remove("open"); }
+  function enterApp(view){
+    $("#entryScreen").classList.add("hidden");
+    $("#app").classList.remove("hidden");
+    $("#demoGuide").classList.add("hidden");
+    setView(view || "panel");
+    window.scrollTo({top:0,behavior:"auto"});
+  }
+  function showStart(){
+    $("#app").classList.add("hidden");
+    $("#sidebar").classList.remove("open");
+    $("#demoGuide").classList.add("hidden");
+    $("#entryScreen").classList.remove("hidden");
+    window.scrollTo({top:0,behavior:"auto"});
+  }
   function statusName(status){ return ({libre:"Libre",ocupada:"Ocupada",reservada:"Reservada",limpieza:"Limpieza"})[status]; }
 
   document.addEventListener("click",(event)=>{
     const target=event.target.closest("button"); if(!target)return;
+    if(target.dataset.enterView)enterApp(target.dataset.enterView);
     if(target.dataset.view)setView(target.dataset.view);
     if(target.hasAttribute("data-new-order"))openOrder();
     if(target.dataset.table)openOrder(target.dataset.table);
@@ -146,6 +161,7 @@
   $("#closeModal").addEventListener("click",closeOrder);
   $("#orderModal").addEventListener("click",e=>{if(e.target.id==="orderModal")closeOrder();});
   $("#menuButton").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
+  $("#backToStart").addEventListener("click",showStart);
   $("#closeGuide").addEventListener("click",()=>$("#demoGuide").classList.add("hidden"));
   $("#tourButton").addEventListener("click",()=>$("#demoGuide").classList.remove("hidden"));
   $("#startTour").addEventListener("click",()=>{$("#demoGuide").classList.add("hidden");setView("mesas");toast("Elegí una mesa para cargar el pedido");});

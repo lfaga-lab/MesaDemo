@@ -13,7 +13,63 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="app" class="app-shell">
+  <section id="entryScreen" class="entry-screen">
+    <div class="entry-shade"></div>
+    <div class="entry-window">
+      <header class="entry-header">
+        <div class="nuvora-mark">
+          <span class="nuvora-symbol">N</span>
+          <div><strong>NUVORA</strong><small>DIGITAL PRODUCTS LAB</small></div>
+        </div>
+        <span class="demo-badge"><i></i> DEMO COMERCIAL</span>
+      </header>
+
+      <div class="entry-main">
+        <section class="entry-story">
+          <p class="entry-kicker">NUVORA LAB · GASTRONOMÍA</p>
+          <h1>MESA<span>.</span></h1>
+          <h2>El servicio completo,<br>en un mismo lugar.</h2>
+          <p class="entry-description">Una operación gastronómica conectada desde la mesa hasta la cocina y la caja. Diseñada para reducir errores, acelerar el servicio y darle visibilidad a todo el equipo.</p>
+          <div class="entry-features">
+            <span><i>✓</i> Comandas digitales</span>
+            <span><i>✓</i> Cocina en tiempo real</span>
+            <span><i>✓</i> Mesas, caja y métricas</span>
+          </div>
+        </section>
+
+        <section class="role-selector">
+          <div class="role-heading">
+            <span class="role-number">01</span>
+            <div><p>EXPLORAR MESA</p><h3>¿Desde dónde querés entrar?</h3></div>
+          </div>
+          <p class="role-intro">Elegí un rol para comenzar. Después vas a poder recorrer toda la aplicación.</p>
+
+          <button class="role-card featured" data-enter-view="mesas">
+            <span class="role-icon">⌁</span>
+            <span class="role-copy"><small>OPERACIÓN DE SALÓN</small><strong>Explorar como Salón</strong><em>Mesas, reservas y carga de comandas.</em></span>
+            <b>→</b>
+          </button>
+          <button class="role-card" data-enter-view="cocina">
+            <span class="role-icon">◫</span>
+            <span class="role-copy"><small>PRODUCCIÓN</small><strong>Ver pantalla de Cocina</strong><em>Pedidos, tiempos y avisos al equipo.</em></span>
+            <b>→</b>
+          </button>
+          <button class="role-card" data-enter-view="caja">
+            <span class="role-icon">◇</span>
+            <span class="role-copy"><small>GESTIÓN DEL TURNO</small><strong>Ingresar como Caja</strong><em>Cuentas abiertas, cobros y métricas.</em></span>
+            <b>→</b>
+          </button>
+        </section>
+      </div>
+
+      <footer class="entry-footer">
+        <span>DEMO CON DATOS FICTICIOS</span>
+        <span>Sin operaciones reales · Versión 1.2</span>
+      </footer>
+    </div>
+  </section>
+
+  <div id="app" class="app-shell hidden">
     <aside id="sidebar" class="sidebar">
       <div class="brand-wrap">
         <p class="eyebrow">NUVORA LAB · GASTRONOMÍA</p>
@@ -36,6 +92,7 @@
     <section class="workspace">
       <header class="topbar">
         <button id="menuButton" class="menu-button" aria-label="Abrir menú">☰</button>
+        <button id="backToStart" class="back-start">← Inicio</button>
         <div class="welcome"><p>Buenas noches, Ana</p><small>Lunes, 24 de agosto · Servicio cena</small></div>
         <div class="top-actions">
           <button id="tourButton" class="ghost">▶ Ver recorrido</button>
@@ -64,7 +121,7 @@
     </section>
   </div>
 
-  <aside id="demoGuide" class="demo-guide">
+  <aside id="demoGuide" class="demo-guide hidden">
     <button id="closeGuide" class="guide-close">×</button>
     <p class="eyebrow">DEMO COMERCIAL</p>
     <h3>Probá el circuito completo</h3>
