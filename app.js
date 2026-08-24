@@ -130,33 +130,8 @@
   function setView(view){ state.view=view; render(); $("#sidebar").classList.remove("open"); }
   function statusName(status){ return ({libre:"Libre",ocupada:"Ocupada",reservada:"Reservada",limpieza:"Limpieza"})[status]; }
 
-  function enterDemo(view){
-    const profiles={
-      mesas:{avatar:"AF",name:"Ana Ferreyra",role:"Encargada de salón",welcome:"Buenas noches, Ana",detail:"Lunes, 24 de agosto · Servicio cena"},
-      cocina:{avatar:"MR",name:"Matías Ríos",role:"Jefe de cocina",welcome:"Cocina en servicio",detail:"Pase principal · Turno noche"},
-      caja:{avatar:"LV",name:"Lucía Vidal",role:"Responsable de caja",welcome:"Buenas noches, Lucía",detail:"Caja principal · Servicio cena"}
-    };
-    const profile=profiles[view]||profiles.mesas;
-    $("#userAvatar").textContent=profile.avatar;
-    $("#userName").textContent=profile.name;
-    $("#userRole").textContent=profile.role;
-    $("#welcomeTitle").textContent=profile.welcome;
-    $("#welcomeDetail").textContent=profile.detail;
-    $("#demoEntry").classList.add("hidden");
-    $("#app").classList.remove("hidden");
-    setView(view);
-  }
-
-  function backToEntry(){
-    $("#app").classList.add("hidden");
-    $("#demoGuide").classList.add("hidden");
-    $("#demoEntry").classList.remove("hidden");
-    $("#sidebar").classList.remove("open");
-  }
-
   document.addEventListener("click",(event)=>{
     const target=event.target.closest("button"); if(!target)return;
-    if(target.dataset.entryView)enterDemo(target.dataset.entryView);
     if(target.dataset.view)setView(target.dataset.view);
     if(target.hasAttribute("data-new-order"))openOrder();
     if(target.dataset.table)openOrder(target.dataset.table);
@@ -171,7 +146,6 @@
   $("#closeModal").addEventListener("click",closeOrder);
   $("#orderModal").addEventListener("click",e=>{if(e.target.id==="orderModal")closeOrder();});
   $("#menuButton").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
-  $("#backToEntry").addEventListener("click",backToEntry);
   $("#closeGuide").addEventListener("click",()=>$("#demoGuide").classList.add("hidden"));
   $("#tourButton").addEventListener("click",()=>$("#demoGuide").classList.remove("hidden"));
   $("#startTour").addEventListener("click",()=>{$("#demoGuide").classList.add("hidden");setView("mesas");toast("Elegí una mesa para cargar el pedido");});

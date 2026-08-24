@@ -31,25 +31,17 @@ Esa será la dirección pública de NUVORA para compartir.
 CÓMO MOSTRARLA
 --------------
 
-- Al ingresar vas a ver la portada estándar de NUVORA.
-- Elegí Salón, Cocina o Caja para comenzar desde ese rol.
-- Desde cualquier vista podés usar "Volver al inicio" para cambiar de perfil.
-- Para mostrar el circuito de comandas, abrí la demo en dos pestañas:
-  una como Salón y otra como Cocina.
-- Cargá una comanda desde Salón y observá cómo aparece en Cocina.
+- Abrí la demo en una pestaña como Salón.
+- Abrí la misma dirección en otra pestaña como Cocina.
+- Cargá una comanda desde Salón.
+- La nueva comanda aparecerá automáticamente en Cocina.
 
 La información es ficticia y se guarda solamente para la demostración.
 
 ARCHIVO CONFIG.JS
 -----------------
 
-  No necesita cambios para funcionar.
-  Nunca coloques claves privadas dentro de config.js.
-
-PORTADA ESTÁNDAR
-----------------
-
-El archivo PORTADA-ESTANDAR-NUVORA.md contiene las reglas que deberán seguir
-las próximas demos de NUVORA.
+No necesita cambios para funcionar.
+Nunca coloques claves privadas dentro de config.js.
 
 NUVORA · 2026
