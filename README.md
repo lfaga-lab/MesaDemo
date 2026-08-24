@@ -14,6 +14,7 @@ Demo web de **NUVORA Lab · Gastronomía**, preparada para publicarse directamen
 - seguimiento de comandas;
 - caja y métricas;
 - recorrido guiado;
+- portada NUVORA con acceso por roles;
 - diseño responsive;
 - datos ficticios restaurables.
 
@@ -34,5 +35,6 @@ La versión inicial funciona localmente y sincroniza automáticamente las pesta�
 - `app.js`: datos ficticios y funcionamiento.
 - `config.js`: configuración pública.
 - `assets/`: recursos gráficos.
+- `PORTADA-ESTANDAR-NUVORA.md`: reglas para mantener iguales todas las demos.
 
 Todos los nombres, reservas, comandas y métricas son ficticios.
