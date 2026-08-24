@@ -1,0 +1,47 @@
+MESA · DEMO COMERCIAL PARA GITHUB
+=================================
+
+Esta carpeta ya está lista para subir directamente a GitHub.
+No tenés que instalar nada ni modificar el código.
+
+PASOS
+-----
+
+1. Creá un repositorio nuevo en GitHub.
+2. Entrá al repositorio.
+3. Elegí: Add file > Upload files.
+4. Subí TODO el contenido de esta carpeta:
+   - index.html
+   - styles.css
+   - app.js
+   - config.js
+   - assets
+5. Confirmá con Commit changes.
+6. Abrí Settings > Pages.
+7. En Source seleccioná Deploy from a branch.
+8. Seleccioná main y /root.
+9. Guardá.
+
+GitHub te entregará una dirección similar a:
+
+https://tuusuario.github.io/mesa-demo/
+
+Esa será la dirección pública de NUVORA para compartir.
+
+CÓMO MOSTRARLA
+--------------
+
+- Abrí la demo en una pestaña como Salón.
+- Abrí la misma dirección en otra pestaña como Cocina.
+- Cargá una comanda desde Salón.
+- La nueva comanda aparecerá automáticamente en Cocina.
+
+La información es ficticia y se guarda solamente para la demostración.
+
+ARCHIVO CONFIG.JS
+-----------------
+
+No necesita cambios para funcionar.
+Nunca coloques claves privadas dentro de config.js.
+
+NUVORA · 2026

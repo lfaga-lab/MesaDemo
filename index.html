@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>MESA · Demo Comercial</title>
+  <meta name="description" content="Salón, comandas, cocina y caja conectados en una sola operación gastronómica.">
+  <meta name="theme-color" content="#0d0d0c">
+  <meta property="og:title" content="MESA · Operación gastronómica conectada">
+  <meta property="og:description" content="Salón, comandas, cocina y caja trabajando con la misma información.">
+  <meta property="og:image" content="assets/og.png">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand-wrap">
+        <p class="eyebrow">NUVORA LAB · GASTRONOMÍA</p>
+        <div class="brand">MESA<span>.</span></div>
+        <p class="brand-sub">Operación conectada</p>
+      </div>
+      <nav aria-label="Navegación principal">
+        <button class="active" data-view="panel"><i>⌂</i>Panel</button>
+        <button data-view="mesas"><i>◉</i>Mapa de mesas</button>
+        <button data-view="comandas"><i>▤</i>Comandas</button>
+        <button data-view="cocina"><i>◫</i>Cocina <b id="readyBadge" class="nav-badge">1</b></button>
+        <button data-view="caja"><i>◇</i>Caja</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="user"><span>AF</span><div><strong>Ana Ferreyra</strong><small>Encargada de salón</small></div></div>
+        <button id="resetDemo" class="reset">↻ Restaurar demo</button>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <button id="menuButton" class="menu-button" aria-label="Abrir menú">☰</button>
+        <div class="welcome"><p>Buenas noches, Ana</p><small>Lunes, 24 de agosto · Servicio cena</small></div>
+        <div class="top-actions">
+          <button id="tourButton" class="ghost">▶ Ver recorrido</button>
+          <span class="service"><i></i>Servicio en curso</span>
+          <button class="primary" data-new-order>+ Nueva comanda</button>
+        </div>
+      </header>
+      <div id="content" class="page-content"></div>
+    </section>
+  </div>
+
+  <div id="orderModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Nueva comanda">
+    <section class="order-modal">
+      <header class="modal-head"><div><p class="eyebrow">NUEVA COMANDA</p><h2 id="modalTable">Mesa 12</h2></div><button id="closeModal" aria-label="Cerrar">×</button></header>
+      <div class="order-layout">
+        <div class="menu-panel">
+          <div id="categories" class="categories"></div>
+          <div id="menuGrid" class="menu-grid"></div>
+        </div>
+        <aside class="ticket-draft">
+          <div><p class="eyebrow">PEDIDO ACTUAL</p><h3 id="draftCount">0 productos</h3></div>
+          <div id="draftLines" class="draft-lines"></div>
+          <footer class="draft-footer"><div><span>Total parcial</span><strong id="draftTotal">$ 0</strong></div><button id="sendOrder" class="send" disabled>Enviar a cocina <span>→</span></button></footer>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <aside id="demoGuide" class="demo-guide">
+    <button id="closeGuide" class="guide-close">×</button>
+    <p class="eyebrow">DEMO COMERCIAL</p>
+    <h3>Probá el circuito completo</h3>
+    <p>Elegí una mesa, cargá una comanda y mirá cómo aparece en Cocina.</p>
+    <button id="startTour">Empezar recorrido <span>→</span></button>
+  </aside>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
